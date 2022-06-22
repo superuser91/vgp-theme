@@ -837,7 +837,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 body {
-  background: var(--w-bg-color) url("assets/images/bg-sm.jpg") no-repeat center top scroll;
   background-size: 100% auto;
 }
 
@@ -1293,7 +1292,6 @@ a.hotro {
 
 @media (min-width: 960px) {
   body {
-    background: var(--w-bg-color) url("assets/images/bg-big.png") no-repeat center top scroll;
     background-size: 120% auto;
     font-size: 1.5vw;
   }

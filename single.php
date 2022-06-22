@@ -54,7 +54,7 @@
 			</div>
 
 			<!-- content -->
-			<div class="body-content md:max-h-[40em] lg:max-h-[60em]">
+			<div class="body-content">
 				<div class="content p-[2em] md:p-[3em]">
 					<?php while (have_posts()) : the_post() ?>
 						<h4 class="title text-[2em] leading-[1] text-primary">

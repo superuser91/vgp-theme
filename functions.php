@@ -199,6 +199,7 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+new VGP_Theme_Customizer;
 
 /**
  * Load Jetpack compatibility file.
@@ -207,28 +208,44 @@ if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-function get_custom_icon($blog_id = 0)
+function the_custom_icon($blog_id = 0)
 {
-	return sprintf(
+	$icon = get_theme_mod('the_custom_icon') ?: esc_url(get_template_directory_uri()) . '/assets/images/icon.png';
+
+	echo sprintf(
 		'<a href="%1$s" class="custom-icon-link" rel="home"%2$s>%3$s</a>',
 		esc_url(home_url('/')),
 		'',
-		"<img src='" . esc_url(get_template_directory_uri()) . '/assets/images/icon.png' . "' />"
+		"<img src='" . $icon . "' />"
 	);
-
-	// /**
-	//  * Filters the custom logo output.
-	//  *
-	//  * @since 4.5.0
-	//  * @since 4.6.0 Added the `$blog_id` parameter.
-	//  *
-	//  * @param string $html    Custom logo HTML output.
-	//  * @param int    $blog_id ID of the blog to get the custom logo for.
-	//  */
-	// return apply_filters('get_custom_icon', $html, $blog_id);
 }
 
-function the_custom_icon($blog_id = 0)
+function the_fanpage_url($blog_id = 0)
 {
-	echo get_custom_icon($blog_id);
+	echo sprintf("<a href='%s' class='custom-fanpage-link'>Fanpage</a>", get_theme_mod('the_fanpage_url', '#'));
+}
+
+function the_group_url($blog_id = 0)
+{
+	echo sprintf("<a href='%s' class='custom-group-link'>Cộng Đồng</a>", get_theme_mod('the_group_url', '#'));
+}
+
+function the_download_url($blog_id = 0)
+{
+	echo sprintf("<a href='%s' class='custom-download-link'>Tải Game</a>", get_theme_mod('the_download_url', '#'));
+}
+
+function the_support_url($blog_id = 0)
+{
+	echo sprintf("<a href='%s' class='custom-support-link'>Hỗ Trợ</a>", get_theme_mod('the_support_url', '#'));
+}
+
+function the_background_image_url()
+{
+	echo get_theme_mod('the_custom_background');
+}
+
+function body_styles()
+{
+	echo sprintf("style=\"background: var(--w-bg-color) url('%s') no-repeat center top scroll\"", get_theme_mod('the_custom_background'));
 }

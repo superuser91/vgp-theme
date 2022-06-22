@@ -23,7 +23,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> <?php body_styles() ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'vgp_theme'); ?></a>
@@ -60,11 +60,11 @@
 				<!-- menu -->
 				<div class="block-menu">
 					<ul class="text-center">
-						<li class=""><a href="">Trang chủ</a></li>
-						<li><a href="">Fanpage</a></li>
-						<li><a href="">Cộng Đồng</a></li>
-						<li><a href="">Tải Game</a></li>
-						<li><a href="">Hỗ trợ</a></li>
+						<li><?php get_site_url() ?></li>
+						<li><?php the_fanpage_url(); ?></li>
+						<li><?php the_group_url(); ?></li>
+						<li><?php the_download_url(); ?></li>
+						<li><?php the_support_url(); ?></li>
 					</ul>
 					<div class="text-[.8em] leading-[2em] h-[2em] opacity-50">
 						<button onclick="hideCanvas()" class="flex justify-center items-center mx-auto w-full">
