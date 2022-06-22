@@ -1,0 +1,40 @@
+.layout {
+  grid-template-areas:
+    "download download button button button button button button"
+    "download download content content content content content content"
+    "feature feature feature feature news news news news";
+}
+.body-content {
+  grid-area: content;
+  background-color: var(--w-bodycontent);
+  overflow: auto;
+}
+.body-content .content p {
+  line-height: 1.75;
+  margin: 1em 0;
+}
+.block-download {
+  height: 25em;
+}
+.block-download-inside {
+  width: calc(100% - 0.69em);
+  padding-top: 25%;
+}
+.block-download-inside > .wrapper a {
+  height: 5.3em;
+  font-size: 1em;
+}
+
+@media (min-width: 1200px) {
+  .block-download {
+    height: 35em;
+  }
+  .block-download-inside {
+    width: calc(100% - 1em);
+    padding-top: 36%;
+  }
+  .block-download-inside > .wrapper a {
+    height: 5.3em;
+    font-size: 1.25em;
+  }
+}
