@@ -245,7 +245,31 @@ function the_background_image_url()
 	echo get_theme_mod('the_custom_background');
 }
 
+function the_swipers()
+{
+	$gallery = get_theme_mod('the_custom_gallery', []);
+
+	$html = '';
+	foreach ($gallery as $image) {
+		$data = get_post($image);
+		$html .= sprintf(
+			"<div class='swiper-slide'>
+							<a href='%s' class='w-image-block w-full'>
+								%s
+							</a>
+						</div>",
+			wp_http_validate_url($data->post_content) ? $data->post_content : 'javascript:void(0)',
+			get_image_tag($image, $data->post_title, $data->post_content, 'center', 'full'),
+
+		);
+	}
+
+	echo $html;
+}
+
 function body_styles()
 {
 	echo sprintf("style=\"background: var(--w-bg-color) url('%s') no-repeat center top scroll\"", get_theme_mod('the_custom_background'));
 }
+
+add_filter('big_image_size_threshold', '__return_false');

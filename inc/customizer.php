@@ -5,6 +5,8 @@
  *
  * @package vgp-theme
  */
+// require get_template_directory() . '/inc/image-gallery-control.php';
+
 
 class VGP_Theme_Customizer
 {
@@ -25,6 +27,7 @@ class VGP_Theme_Customizer
 
 		$this->addLinkPanel($wp_customize);
 		$this->addArtPanel($wp_customize);
+		$this->addGalleryPanel($wp_customize);
 	}
 
 	/**
@@ -180,6 +183,40 @@ class VGP_Theme_Customizer
 		}
 	}
 
+	/**
+	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+	 * @return void
+	 */
+	function addGalleryPanel($wp_customize)
+	{
+		$wp_customize->add_section('gallery_section', array(
+			'title' => 'Cấu hình Gallery',
+			'priority' => 15,
+		));
+
+		$wp_customize->add_setting('the_custom_gallery', array(
+			'default' => false,
+		));
+
+		$wp_customize->add_control('the_fanpage_link_control', array(
+			'label' => 'Địa chỉ Fanpage',
+			'type' => 'image_gallery',
+			'section' => 'gallery_section',
+			'settings' => 'the_custom_gallery',
+		));
+
+
+		if (isset($wp_customize->selective_refresh)) {
+			$wp_customize->selective_refresh->add_partial(
+				'the_custom_gallery',
+				array(
+					'selector'        => '.swiper-slide ',
+					'render_callback' => 'customize_partial_the_custom_gallery',
+				)
+			);
+		}
+	}
+
 	public function customize_partial_the_fanpage_link()
 	{
 		echo the_fanpage_url();
@@ -193,5 +230,10 @@ class VGP_Theme_Customizer
 	public function customize_partial_the_background_link()
 	{
 		echo the_background_image_url();
+	}
+
+	public function customize_partial_the_custom_gallery()
+	{
+		echo the_fanpage_url();
 	}
 }

@@ -82,16 +82,7 @@ get_header();
 			<div class="w-full swiper newsboard">
 				<!-- Additional required wrapper -->
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<a href="" class="w-image-block w-full">
-							<img src="" alt="" />
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="" class="w-image-block w-full">
-							<img src="" alt="" />
-						</a>
-					</div>
+					<?php the_swipers() ?>
 				</div>
 				<div class="swiper-pagination"></div>
 			</div>
