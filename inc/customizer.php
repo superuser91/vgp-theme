@@ -136,6 +136,20 @@ class VGP_Theme_Customizer
 			'priority' => 15,
 		));
 
+		$wp_customize->add_setting('the_custom_background_mobile', array(
+			'default' => false,
+		));
+
+		$wp_customize->add_control(new WP_Customize_Image_Control(
+			$wp_customize,
+			'the_custom_background_mobile_control',
+			array(
+				'label'      => __('Chọn ảnh background (mobile)', 'vgp_theme'),
+				'section'    => 'art_section',
+				'settings'   => 'the_custom_background_mobile',
+			)
+		));
+
 		$wp_customize->add_setting('the_custom_background', array(
 			'default' => false,
 		));

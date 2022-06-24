@@ -98,32 +98,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- character -->
-	<div class="w-full mx-auto -mt-[.5em] md:mt-[2em]">
-		<a href="/characters" class="w-image-button w-full md:hidden">
-			<img src="/wp-content/themes/vgp_theme/assets/images/character.png" alt="" />
-		</a>
-		<div class="swiper character hidden md:block">
-			<!-- Additional required wrapper -->
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<a href="/characters" class="w-image-block w-full">
-						<img src="/wp-content/themes/vgp_theme/assets/images/character/block-char_01.png" alt="" />
-					</a>
-				</div>
-				<div class="swiper-slide">
-					<a href="/characters" class="w-image-block w-full">
-						<img src="/wp-content/themes/vgp_theme/assets/images/character/block-char_02.png" alt="" />
-					</a>
-				</div>
-			</div>
-			<div class="swiper-pagination"></div>
-		</div>
-	</div>
 	<!-- 18+ -->
-	<div class="text-[.8em] text-center mt-[3em] md:mt-[6em] px-[2em] py-[1em] text-primary bg-[#f4e3d3]">
-		Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe
-	</div>
 </section>
 
 <?php get_footer() ?>

@@ -24,7 +24,7 @@ get_header();
 			<div class="w-full mx-auto md:hidden">
 				<a href="/dl">
 					<button class="w-image-button">
-						<!-- <img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/btn-download-m.png' ?>" alt="" /> -->
+						<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/btn-download-m.png' ?>" alt="" />
 					</button>
 				</a>
 			</div>
@@ -114,52 +114,6 @@ get_header();
 				</a>
 			</div>
 		</div>
-	</div>
-	<!-- character -->
-	<div class="w-full mx-auto -mt-[.5em] md:mt-0">
-		<a href="/characters" class="w-image-button w-full md:hidden">
-			<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/character.png' ?>" alt="" />
-		</a>
-		<div class="swiper character hidden md:block">
-			<!-- Additional required wrapper -->
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<a href="/characters" class="w-image-block w-full">
-						<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/character/block-char_01.png' ?>" alt="" />
-					</a>
-				</div>
-				<div class="swiper-slide">
-					<a href="/characters" class="w-image-block w-full">
-						<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/character/block-char_02.png' ?>" alt="" />
-					</a>
-				</div>
-				<div class="swiper-slide">
-					<a href="/characters" class="w-image-block w-full">
-						<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/character/block-char_03.png' ?>" alt="" />
-					</a>
-				</div>
-				<div class="swiper-slide">
-					<a href="/characters" class="w-image-block w-full">
-						<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/character/block-char_04.png' ?>" alt="" />
-					</a>
-				</div>
-				<div class="swiper-slide">
-					<a href="/characters" class="w-image-block w-full">
-						<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/character/block-char_05.png' ?>" alt="" />
-					</a>
-				</div>
-				<div class="swiper-slide">
-					<a href="/characters" class="w-image-block w-full">
-						<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/character/block-char_06.png' ?>" alt="" />
-					</a>
-				</div>
-			</div>
-			<div class="swiper-pagination"></div>
-		</div>
-	</div>
-	<!-- 18+ -->
-	<div class="text-[.8em] text-center mt-[3em] md:mt-[6em] px-[2em] py-[1em] text-primary bg-[#f4e3d3]">
-		Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe
 	</div>
 </section>
 

@@ -269,7 +269,18 @@ function the_swipers()
 
 function body_styles()
 {
-	echo sprintf("style=\"background: var(--w-bg-color) url('%s') no-repeat center top scroll\"", get_theme_mod('the_custom_background'));
+	echo "<style>
+		body {
+			background: var(--w-bg-color) url('" . get_theme_mod('the_custom_background_mobile') . "') no-repeat center top scroll;
+			background-size: 100% auto;
+		}
+		@media (min-width: 960px) {
+			body {
+			  background: var(--w-bg-color) url('" . get_theme_mod('the_custom_background') . "') no-repeat center top scroll;
+			  background-size: 120% auto;
+			  font-size: 0.9375vw;
+			}
+		}</style>";
 }
 
 add_filter('big_image_size_threshold', '__return_false');
